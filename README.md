@@ -10,6 +10,7 @@ We want to use voxels to represent miniature (far-away) objects in the scene, ma
 - **Index of Refraction**: $\eta_x$, describing the properties of specular dielectric reflection
 
 Using the Schlick-Fresnel approximation, we can write the Fresnel reflectance as:
+
 $$
 F(\omega_i,\omega_h;r_0)=r_0(1-F_c)+F_c,F_c=(1-|\omega_i\cdot\omega_h|)^5
 $$
