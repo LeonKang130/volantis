@@ -7,7 +7,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-auto main(int argc, char** argv) -> int {
+auto main(const int argc, char** argv) -> int {
     cxxopts::Options options("miniature", "Experimental appearance aggregation algorithm");
     options.add_options()
         ("d,debug", "Enable debugging messages", cxxopts::value<bool>()->default_value("false"))
