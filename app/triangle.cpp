@@ -1,11 +1,12 @@
 ﻿//
-// Created by Leon Kang on 2025/3/19.
+// Created by Leon Kang on 2025/3/20.
 //
 
 #include <cxxopts.hpp>
 #include <spdlog/spdlog.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "pipeline.h"
 
 auto main(const int argc, char** argv) -> int {
     cxxopts::Options options("miniature", "Experimental appearance aggregation algorithm");
@@ -41,6 +42,8 @@ auto main(const int argc, char** argv) -> int {
         glfwTerminate();
         return -1;
     }
+    const auto pipeline = volantis::Pipeline::LoadRasterizationProgram("asset/shader/vertex.glsl", "asset/shader/fragment.glsl");
+
     while (!glfwWindowShouldClose(window)) {
         glClearColor(0.1f, 0.1f, 0.7f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
